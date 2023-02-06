@@ -1,9 +1,9 @@
 import pygame, sys, time
 import numpy as np
 
-WIDTH = 500
-HEIGHT = 500
-CELL_SIZE = 10
+WIDTH = 800
+HEIGHT = 800
+CELL_SIZE = 20
 FPS = 10
 COLORS = {
     "BACKGROUND": (10, 10, 10),
@@ -41,6 +41,7 @@ def update(screen, cells, size, progress=False):
 def main():
     pygame.init()
     screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("GAME OF LIFE    -->     SPACE to stop/continue | CLICK to draw cells")
     cells = np.zeros((HEIGHT//CELL_SIZE, WIDTH//CELL_SIZE))
     screen.fill(COLORS["GRID"])
     update(screen, cells, CELL_SIZE)
