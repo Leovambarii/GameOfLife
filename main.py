@@ -51,6 +51,7 @@ def main():
     pause = False
     while True:
         screen.fill(COLORS["GRID"])
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
@@ -65,11 +66,12 @@ def main():
                     pause = not pause
                     update(screen, cells, CELL_SIZE)
                     pygame.display.update()
-            if pygame.mouse.get_pressed()[0]:
+            if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
                 pos = pygame.mouse.get_pos()
-                cells[pos[1]//CELL_SIZE, pos[0]//CELL_SIZE] = 1
+                cells[pos[1]//CELL_SIZE, pos[0]//CELL_SIZE] = 1 if cells[pos[1]//CELL_SIZE, pos[0]//CELL_SIZE] == 0 else 0
                 update(screen, cells, CELL_SIZE)
                 pygame.display.update()
+
         if pause:
             cells = update(screen, cells, CELL_SIZE, progress=True)
             pygame.display.flip()
