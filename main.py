@@ -6,10 +6,10 @@ HEIGHT = 500
 CELL_SIZE = 10
 FPS = 10
 COLORS = {
-    "BACKGROUND": (255, 255, 255),
-    "CELL_ALIVE": (0, 153, 51),
-    "CELL_DYING": (153, 0, 0),
-    "GRID": (0, 0, 0)
+    "BACKGROUND": (10, 10, 10),
+    "CELL_ALIVE": (64, 191, 64),
+    "CELL_DYING": (38, 115, 38),
+    "GRID": (100, 100, 100)
 }
 
 def update(screen, cells, size, progress=False):
